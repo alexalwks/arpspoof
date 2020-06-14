@@ -327,7 +327,7 @@ int main(int argc, char *argv[])
 
 	printf("Resolving victim and target...\n");
 
-	uint8_t victimmac[6], targetmac[6];
+	uint8_t victimmac[6], targetmac[6];/*
 	if (!resolve(iface, victimip, victimmac)) {
 		fprintf(stderr, "Can't resolve victim IP, is it up?\n");
 		return 1;
@@ -335,7 +335,7 @@ int main(int argc, char *argv[])
 	if (!resolve(iface, targetip, targetmac)) {
 		fprintf(stderr, "Can't resolve target IP, is it up?\n");
 		return 1;
-	}
+	}*/
 
 	char errbuf[PCAP_ERRBUF_SIZE];
 	pcap_t *pcap = pcap_open_live(iface.name.c_str(),		// name of the device
@@ -348,12 +348,12 @@ int main(int argc, char *argv[])
 		fprintf(stderr, "Unable to open the adapter. %s is not supported by WinPcap\n", iface.name.c_str());
 		return 1;
 	}
-	/* Check the link layer. We support only Ethernet for simplicity. */
+	/* Check the link layer. We support only Ethernet for simplicity. *//*
 	if (pcap_datalink(pcap) != DLT_EN10MB)
 	{
 		fprintf(stderr, "This program works only on Ethernet networks.\n");
 		return 1;
-	}
+	}*/
 
 	SetConsoleCtrlHandler(CtrlCHandler, TRUE);
 
