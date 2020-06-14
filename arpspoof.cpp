@@ -327,7 +327,7 @@ int main(int argc, char *argv[])
 
 	printf("Resolving victim and target...\n");
 
-	uint8_t victimmac[6], targetmac[6];/*
+	uint8_t victimmac[6], targetmac[6];
 	if (!resolve(iface, victimip, victimmac)) {
 		fprintf(stderr, "Can't resolve victim IP, is it up?\n");
 		return 1;
@@ -335,7 +335,7 @@ int main(int argc, char *argv[])
 	if (!resolve(iface, targetip, targetmac)) {
 		fprintf(stderr, "Can't resolve target IP, is it up?\n");
 		return 1;
-	}*/
+	}
 
 	char errbuf[PCAP_ERRBUF_SIZE];
 	pcap_t *pcap = pcap_open_live(iface.name.c_str(),		// name of the device
